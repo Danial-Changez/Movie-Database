@@ -1,0 +1,20 @@
+Movie Info:
+
+Name    Release Date        Genre           Fav.Character   Rating(Out Of 5)
+joker	Friday, October 4, 2019	  Drama/Crime	   Joker	4.5
+avengers: endgame	Friday, April 26, 2019	  Action	   Thor	4.9
+avengers: infinity war	Friday, April 27, 2018	  Action	   Thor	4.9
+doctor strange mom	Friday, May 6, 2022	  Action	   Dr. Strange	4.5
+doctor strange	Friday, November 4, 2016	  Action	   Dr. Strange	4.75
+thor: ragnarok	Friday, November 3, 2017	  Action	   Thor	4.7
+black panther	Tuesday, February 6, 2018	  Action	   Wakanda	4.5
+iron man	Friday, May 2, 2008	  Action	   Tony Stark	4.5
+iron man 2	Friday, May 7, 2010	  Action	   Tony Stark	4.5
+iron man 3	Friday, May 3, 2013	  Action	   Tony Stark	4.45
+captain america: civil war	Thursday, April 21, 2016	  Action	   Tony Stark	4.6
+spider-man: homecoming	Friday, July 7, 2017	  Action	   Peter Parker	4.6
+spider man: far from home	Wednesday, June 26, 2019	  Action	   Peter Parker	4.6
+spider-man: no way home	Friday, December 17, 2021	  Action	   Aunt May	4.8
+lotr: the fellowship of the ring	Wednesday, December 19, 2001	  Action	   Gandalf	4
+lotr: the two towers	Wednesday, December 18, 2002	  Action	   Gandalf	4.2
+lotr: the return of the king	Wednesday, December 17, 2003	  Action	   Gandalf	4.4
