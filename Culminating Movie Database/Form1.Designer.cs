@@ -45,13 +45,12 @@
             this.title.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.title.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.Location = new System.Drawing.Point(249, 22);
+            this.title.Location = new System.Drawing.Point(339, 31);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(461, 40);
+            this.title.Size = new System.Drawing.Size(269, 40);
             this.title.TabIndex = 0;
-            this.title.Text = "Culminating Movie Database";
+            this.title.Text = "Movie Database";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.title.Click += new System.EventHandler(this.label1_Click);
             // 
             // label5
             // 
@@ -85,7 +84,7 @@
             this.addBtn.TabIndex = 7;
             this.addBtn.Text = "Add";
             this.addBtn.UseVisualStyleBackColor = true;
-            this.addBtn.Click += new System.EventHandler(this.button2_Click);
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // removeBtn
             // 

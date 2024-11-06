@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
     public class Movie
     {
-        //initializing the object variables
-        public String name;
-        public String relDate;
-        public String genre;
-        public String favChar;
-        public double rating;
+        // Object properties to store movie details
+        public String name { get; set; }
+        public String relDate { get; set; }
+        public String genre { get; set; }
+        public String favChar { get; set; }
+        public double rating { get; set; }
 
-        //class constructor that takes 4 strings and a double
+        // Constructor to initialize a Movie object with name, release date, genre, favorite character, and rating
         public Movie(String n, String rD, String gen, String fC, double rate)
         {
             name = n;
@@ -25,7 +21,7 @@ namespace ClassLibrary
             rating = rate;
         }
 
-        //toString function that will return each variable of the object stored in a string
+        // Method to return a string representation of the movie with its details
         public String toString()
         {
             return "\n" + this.name + "\t" + this.relDate + "\t  " +

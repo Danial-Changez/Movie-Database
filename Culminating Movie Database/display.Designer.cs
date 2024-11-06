@@ -28,12 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.title = new System.Windows.Forms.Label();
             this.sub = new System.Windows.Forms.Label();
             this.backBtn = new System.Windows.Forms.Button();
-            this.displayBtn = new System.Windows.Forms.Button();
-            this.sortBtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ratingSort = new System.Windows.Forms.Button();
+            this.nameSort = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.relDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.favCharDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ratingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.movieBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // title
@@ -72,47 +81,99 @@
             this.backBtn.UseVisualStyleBackColor = true;
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
-            // displayBtn
+            // ratingSort
             // 
-            this.displayBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.displayBtn.Location = new System.Drawing.Point(12, 282);
-            this.displayBtn.Name = "displayBtn";
-            this.displayBtn.Size = new System.Drawing.Size(172, 128);
-            this.displayBtn.TabIndex = 49;
-            this.displayBtn.Text = "Display\r\nUnsorted";
-            this.displayBtn.UseVisualStyleBackColor = true;
-            this.displayBtn.Click += new System.EventHandler(this.displayBtn_Click);
+            this.ratingSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ratingSort.Location = new System.Drawing.Point(12, 282);
+            this.ratingSort.Name = "ratingSort";
+            this.ratingSort.Size = new System.Drawing.Size(172, 128);
+            this.ratingSort.TabIndex = 49;
+            this.ratingSort.Text = "Sort By Rating";
+            this.ratingSort.UseVisualStyleBackColor = true;
+            this.ratingSort.Click += new System.EventHandler(this.ratingSort_Click);
             // 
-            // sortBtn
+            // nameSort
             // 
-            this.sortBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sortBtn.Location = new System.Drawing.Point(869, 282);
-            this.sortBtn.Name = "sortBtn";
-            this.sortBtn.Size = new System.Drawing.Size(172, 128);
-            this.sortBtn.TabIndex = 50;
-            this.sortBtn.Text = "Display\r\nSorted";
-            this.sortBtn.UseVisualStyleBackColor = true;
-            this.sortBtn.Click += new System.EventHandler(this.sortBtn_Click);
+            this.nameSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameSort.Location = new System.Drawing.Point(869, 282);
+            this.nameSort.Name = "nameSort";
+            this.nameSort.Size = new System.Drawing.Size(172, 128);
+            this.nameSort.TabIndex = 50;
+            this.nameSort.Text = "Sort By  Name";
+            this.nameSort.UseVisualStyleBackColor = true;
+            this.nameSort.Click += new System.EventHandler(this.nameSort_Click);
             // 
-            // textBox1
+            // dataGridView1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.textBox1.Location = new System.Drawing.Point(190, 116);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(673, 448);
-            this.textBox1.TabIndex = 51;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.relDateDataGridViewTextBoxColumn,
+            this.genreDataGridViewTextBoxColumn,
+            this.favCharDataGridViewTextBoxColumn,
+            this.ratingDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.movieBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(190, 116);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(673, 456);
+            this.dataGridView1.TabIndex = 51;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // relDateDataGridViewTextBoxColumn
+            // 
+            this.relDateDataGridViewTextBoxColumn.DataPropertyName = "relDate";
+            this.relDateDataGridViewTextBoxColumn.HeaderText = "relDate";
+            this.relDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.relDateDataGridViewTextBoxColumn.Name = "relDateDataGridViewTextBoxColumn";
+            this.relDateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // genreDataGridViewTextBoxColumn
+            // 
+            this.genreDataGridViewTextBoxColumn.DataPropertyName = "genre";
+            this.genreDataGridViewTextBoxColumn.HeaderText = "genre";
+            this.genreDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.genreDataGridViewTextBoxColumn.Name = "genreDataGridViewTextBoxColumn";
+            this.genreDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // favCharDataGridViewTextBoxColumn
+            // 
+            this.favCharDataGridViewTextBoxColumn.DataPropertyName = "favChar";
+            this.favCharDataGridViewTextBoxColumn.HeaderText = "favChar";
+            this.favCharDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.favCharDataGridViewTextBoxColumn.Name = "favCharDataGridViewTextBoxColumn";
+            this.favCharDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // ratingDataGridViewTextBoxColumn
+            // 
+            this.ratingDataGridViewTextBoxColumn.DataPropertyName = "rating";
+            this.ratingDataGridViewTextBoxColumn.HeaderText = "rating";
+            this.ratingDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ratingDataGridViewTextBoxColumn.Name = "ratingDataGridViewTextBoxColumn";
+            this.ratingDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // movieBindingSource
+            // 
+            this.movieBindingSource.DataSource = typeof(ClassLibrary.Movie);
             // 
             // display
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1053, 571);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.sortBtn);
-            this.Controls.Add(this.displayBtn);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.nameSort);
+            this.Controls.Add(this.ratingSort);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.sub);
             this.Controls.Add(this.title);
@@ -120,6 +181,8 @@
             this.Text = "Display";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.display_FormClosed);
             this.Load += new System.EventHandler(this.display_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,8 +193,14 @@
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Label sub;
         private System.Windows.Forms.Button backBtn;
-        private System.Windows.Forms.Button displayBtn;
-        private System.Windows.Forms.Button sortBtn;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button ratingSort;
+        private System.Windows.Forms.Button nameSort;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn relDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn genreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn favCharDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ratingDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource movieBindingSource;
     }
 }

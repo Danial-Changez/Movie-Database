@@ -189,7 +189,6 @@
             this.Name = "search";
             this.Text = "Search";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.search_FormClosed_1);
-            this.Load += new System.EventHandler(this.search_Load);
             ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource1)).EndInit();
             this.ResumeLayout(false);

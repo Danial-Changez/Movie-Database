@@ -124,9 +124,9 @@
             this.rateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rateLabel.Location = new System.Drawing.Point(201, 415);
             this.rateLabel.Name = "rateLabel";
-            this.rateLabel.Size = new System.Drawing.Size(267, 32);
+            this.rateLabel.Size = new System.Drawing.Size(283, 32);
             this.rateLabel.TabIndex = 12;
-            this.rateLabel.Text = "Your Rating (1 to 5):";
+            this.rateLabel.Text = "Your Rating (1 to 10):";
             this.rateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // nameTextBox
@@ -137,7 +137,6 @@
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(416, 41);
             this.nameTextBox.TabIndex = 13;
-            this.nameTextBox.TextChanged += new System.EventHandler(this.nameTextBox_TextChanged);
             // 
             // genreTextBox
             // 
@@ -218,7 +217,6 @@
             this.Name = "add";
             this.Text = "Add";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.add_FormClosed_1);
-            this.Load += new System.EventHandler(this.add_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

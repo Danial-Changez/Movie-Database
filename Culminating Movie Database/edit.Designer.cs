@@ -40,7 +40,7 @@
             this.genreLabel = new System.Windows.Forms.Label();
             this.relDateLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.sub = new System.Windows.Forms.Label();
+            this.subUpdate = new System.Windows.Forms.Label();
             this.title = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -117,9 +117,9 @@
             this.rateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rateLabel.Location = new System.Drawing.Point(194, 403);
             this.rateLabel.Name = "rateLabel";
-            this.rateLabel.Size = new System.Drawing.Size(267, 32);
+            this.rateLabel.Size = new System.Drawing.Size(283, 32);
             this.rateLabel.TabIndex = 55;
-            this.rateLabel.Text = "Your Rating (1 to 5):";
+            this.rateLabel.Text = "Your Rating (1 to 10):";
             this.rateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // favCharLabel
@@ -157,7 +157,6 @@
             this.relDateLabel.TabIndex = 52;
             this.relDateLabel.Text = "Release Date:";
             this.relDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.relDateLabel.Click += new System.EventHandler(this.relDateLabel_Click);
             // 
             // nameLabel
             // 
@@ -171,17 +170,17 @@
             this.nameLabel.Text = "Name:";
             this.nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // sub
+            // subUpdate
             // 
-            this.sub.AutoSize = true;
-            this.sub.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.sub.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sub.Location = new System.Drawing.Point(239, 88);
-            this.sub.Name = "sub";
-            this.sub.Size = new System.Drawing.Size(458, 29);
-            this.sub.TabIndex = 50;
-            this.sub.Text = "Here you may edit movies in the database";
-            this.sub.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.subUpdate.AutoSize = true;
+            this.subUpdate.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.subUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subUpdate.Location = new System.Drawing.Point(239, 88);
+            this.subUpdate.Name = "subUpdate";
+            this.subUpdate.Size = new System.Drawing.Size(458, 29);
+            this.subUpdate.TabIndex = 50;
+            this.subUpdate.Text = "Here you may edit movies in the database";
+            this.subUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // title
             // 
@@ -213,7 +212,7 @@
             this.Controls.Add(this.genreLabel);
             this.Controls.Add(this.relDateLabel);
             this.Controls.Add(this.nameLabel);
-            this.Controls.Add(this.sub);
+            this.Controls.Add(this.subUpdate);
             this.Controls.Add(this.title);
             this.Name = "edit";
             this.Text = "edit";
@@ -237,7 +236,7 @@
         private System.Windows.Forms.Label genreLabel;
         private System.Windows.Forms.Label relDateLabel;
         private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.Label sub;
+        private System.Windows.Forms.Label subUpdate;
         private System.Windows.Forms.Label title;
     }
 }

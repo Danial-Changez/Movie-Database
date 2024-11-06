@@ -17,14 +17,9 @@ namespace Culminating_Movie_Database
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void addBtn_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //hiding this form and opening the add form
+            // Hiding this form and opening the add form
             add newForm = new add();
             this.Hide();
             newForm.ShowDialog();
@@ -32,7 +27,7 @@ namespace Culminating_Movie_Database
 
         private void removeBtn_Click(object sender, EventArgs e)
         {
-            //hiding this form and opening the remove form
+            // Hiding this form and opening the remove form
             remove newForm = new remove();
             this.Hide();
             newForm.ShowDialog();
@@ -40,7 +35,7 @@ namespace Culminating_Movie_Database
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            //hiding this form and opening the search form
+            // Hiding this form and opening the search form
             search newForm = new search();
             this.Hide();
             newForm.ShowDialog();
@@ -48,7 +43,7 @@ namespace Culminating_Movie_Database
 
         private void displayBtn_Click(object sender, EventArgs e)
         {
-            //hiding this form and opening the display form
+            // Hiding this form and opening the display form
             display newForm = new display();
             this.Hide();
             newForm.ShowDialog();
@@ -56,7 +51,7 @@ namespace Culminating_Movie_Database
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit(); //the code will end if this form is closed
+            Application.Exit(); // The program will end if this form is closed
         }
     }
 }

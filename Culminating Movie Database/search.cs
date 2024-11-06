@@ -1,25 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 using ClassLibrary;
 
 namespace Culminating_Movie_Database
 {
     public partial class search : Form
     {
-        public static String searchedName = ""; //creating the String that will store the movie name that the user inputted
+        // This string holds the name of the movie entered by the user for future use.
+        public static string searchedName = "";
 
-        //sub3, yesBtn, and noBtn are made invisible at the start of the program.
         public search()
         {
             InitializeComponent();
+            // Initially hide sub3, yesBtn, and noBtn.
             sub3.Visible = false;
             yesBtn.Visible = false;
             noBtn.Visible = false;
@@ -27,87 +20,46 @@ namespace Culminating_Movie_Database
 
         private void search_FormClosed_1(object sender, FormClosedEventArgs e)
         {
-            Application.Exit(); //this program will end if this form is closed
+            Application.Exit(); // Close the application when the form is closed.
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            List<Movie> movies = new List<Movie>(); //creating the list that will store each movie
-            List<String> fileInfo = new List<String>(); //list that will store the text in the Movies.txt file
+            // Get the movie name entered by the user.
+            string movieName = textBox2.Text;
 
-            String n = textBox2.Text.ToLower(); //changing the text in textBox2 to lowercase and storing it in the n string
-
-            try //the following code will be executed
+            // Validate that the movie name is not empty.
+            if (string.IsNullOrEmpty(movieName))
             {
-                //storing each line in the Movies.txt file in the fileInfo list, the first 3 will be skipped
-                fileInfo = File.ReadAllLines(@"C:\Users\dania\source\repos\Culminating Movie Database\Movies.txt").Skip(3).ToList();
+                sub2.Text = "Make sure you enter the name of the movie!";
+                return;
             }
 
-            catch (FileNotFoundException) //if the FileNotFoundException is caught the following message will be caught
+            // Call the SearchMovies method to search for the movie in the database.
+            string result = Database.Instance.SearchMovies(movieName);
+
+            // If the movie is found, display its info, show the buttons, and update the label.
+            if (result.Contains("found"))
             {
-                sub2.Text = "The file was not found, make sure that the file path is correct...";
+                textBox1.Text = result;
+                showButtons(true);
+                sub2.Text = "The movie info has been found.";
             }
-
-            catch (DirectoryNotFoundException)  //if the DirectoryNotFoundException is caught the following message will be caught
+            else
             {
-                sub2.Text = "The file was not found, make sure that the file path is correct...";
-            }
-
-            String[] movieInfo = new String[5]; //creating the array that will store the movie's info
-
-            bool searched = false; //creating the boolean that will check if the movie was searched or not
-
-            //removing empty lines from the fileInfo list
-            foreach (String line in fileInfo.ToList())
-                if (String.IsNullOrEmpty(line))
-                    fileInfo.Remove(line);
-
-            for (int i = 0; i < fileInfo.Count; i++) //this will loop through each line in the fileInfo list
-            {
-                movieInfo = fileInfo[i].Split('\t'); //splitting the line by tabs
-                
-                //adding a new movie into the movies list, by using the contents of the movieInfo array
-                movies.Add(new Movie(movieInfo[0], movieInfo[1], movieInfo[2], movieInfo[3], Convert.ToDouble(movieInfo[4]))); 
-            }
-
-            if (String.IsNullOrEmpty(textBox2.Text) == false) //if the line isnt empty the following code will execute
-            {
-                //this will loop as long as i is less than the number of items in the movies list
-                for (int i = 0; i < movies.Count; i++)
-                {
-                    if (movies[i].name == n) //if movie's name is equal to the n string
-                    {
-                        //writing the movie's contents to textBox1
-                        textBox1.Text = "Name 	Release Date 		Genre           Fav.Character 	Rating(Out Of 5)";
-                        textBox1.AppendText(Environment.NewLine);
-                        textBox1.AppendText(movies[i].toString());
-
-                        showButtons(true); //calling the showButtons method with true as an argument
-                        sub2.Text = "The movie info has been found.";
-                    }
-                }
-
-                if (searched == false) //if searched is equal to false the following will be execute
-                {
-                    sub2.Text = "That movie could not be found...";
-                    textBox1.Clear(); //clearing textBox1
-                    showButtons(false); //calling the showButtons method with false as an argument
-                }
-            }
-
-            else if (String.IsNullOrEmpty(textBox2.Text)) //if textBox2 is empty the following will happen
-            {
-                sub2.Text = "Make sure that the name of the movie is entered!";
-                textBox1.Clear(); //clearing textBox1
-                showButtons(false); //calling the showButtons method with false as an argument
+                // If no movie is found, clear the text box and hide the buttons.
+                textBox1.Clear();
+                showButtons(false);
+                sub2.Text = result; // Display the result from SearchMovies (e.g., "No movie found").
             }
         }
 
         private void yesBtn_Click(object sender, EventArgs e)
         {
-            searchedName = textBox2.Text; //searchedName will equal the text in textBox2
+            // Store the movie name in searchedName for use in the edit form.
+            searchedName = textBox2.Text;
 
-            //hhiding this form and opening the edit form
+            // Hide this form and open the edit form.
             edit newForm = new edit();
             this.Hide();
             newForm.ShowDialog();
@@ -115,47 +67,38 @@ namespace Culminating_Movie_Database
 
         private void noBtn_Click(object sender, EventArgs e)
         {
+            // Prompt the user to enter the movie name again, and clear the text boxes.
             sub2.Text = "Enter the name of the movie";
-            showButtons(false); //calling showButtons method with false as an argument
+            showButtons(false);
 
-            //clearing textBox 1 and 2
             textBox1.Clear();
             textBox2.Clear();
         }
 
         private void backBtn_Click(object sender, EventArgs e)
         {
-            //hiding this form and opening form1
+            // Hide this form and open the main form (Form1).
             Form1 f1 = new Form1();
             this.Hide();
             f1.ShowDialog();
         }
 
-        /*This method takes a boolean as a parameter. If the boolean is equal to true
-        Then label3, button3, and button4 will be visible. If the boolean is false then
-        they will be invisible */
+        /* This method shows or hides buttons based on the boolean parameter passed. 
+           If true, the buttons and labels are made visible, otherwise, they are hidden. */
         public void showButtons(bool x)
         {
-            //if the boolean is true then sub3, yesBtn, and noBtn will be visible
-            if (x == true)
+            if (x)
             {
                 sub3.Visible = true;
                 yesBtn.Visible = true;
                 noBtn.Visible = true;
             }
-
-            //if the boolean is false then sub3, yesBtn, and noBtn will be invisible
             else
             {
                 sub3.Visible = false;
                 yesBtn.Visible = false;
                 noBtn.Visible = false;
             }
-        }
-
-        private void search_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
