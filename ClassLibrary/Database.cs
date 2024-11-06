@@ -9,7 +9,7 @@ namespace ClassLibrary
     {
         private static Database _instance;
         public List<Movie> Movies { get; set; } // List to hold movie objects
-        private string connectionString = "Server=localhost;Database=Movie_Database;User ID=root;Password=Q4WG9oU!fqzD!FiW@yVA;"; // MySQL connection string
+        private string connectionString = "Server=localhost;Database=Movie_Database;User ID=root;Password=YourPasswordHere;"; // MySQL connection string
 
         // Private constructor to initialize the movie list and load data
         private Database()
