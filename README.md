@@ -61,7 +61,7 @@ A Windows Forms-based application built using C# to manage a movie database. Use
    ```sql
    CREATE TABLE movies (
        name TEXT(255) PRIMARY KEY,
-       release_date DATE,
+       release_date TEXT,   -- DATE could also be used, the result should be the same
        genre TEXT(100),
        favorite_character TEXT(100),
        rating REAL
