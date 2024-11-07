@@ -43,7 +43,7 @@ A Windows Forms-based application built using C# to manage a movie database. Use
 2. **Install MySQL** for managing the database.
 3. **Clone the repository** to your local machine:
    ```bash
-   git clone https://github.com/your-username/Movie-Database.git
+   git clone https://github.com/Danial-Changez/Movie-Database.git
 
 ## Database Configuration
 
