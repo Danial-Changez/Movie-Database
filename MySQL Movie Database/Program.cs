@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Culminating_Movie_Database
+namespace MySQL_Movie_Database
 {
     internal static class Program
     {

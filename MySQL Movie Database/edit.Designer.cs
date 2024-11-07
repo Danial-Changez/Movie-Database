@@ -1,4 +1,4 @@
-﻿namespace Culminating_Movie_Database
+﻿namespace MySQL_Movie_Database
 {
     partial class edit
     {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Culminating_Movie_Database
+namespace MySQL_Movie_Database
 {
     public partial class Form1 : Form
     {

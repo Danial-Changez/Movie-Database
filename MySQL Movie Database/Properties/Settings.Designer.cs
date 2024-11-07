@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Culminating_Movie_Database.Properties
+namespace MySQL_Movie_Database.Properties
 {
 
 

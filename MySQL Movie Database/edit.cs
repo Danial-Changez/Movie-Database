@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Culminating_Movie_Database
+namespace MySQL_Movie_Database
 {
     public partial class edit : Form
     {

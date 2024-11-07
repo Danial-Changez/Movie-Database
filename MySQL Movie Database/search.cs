@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using ClassLibrary;
 
-namespace Culminating_Movie_Database
+namespace MySQL_Movie_Database
 {
     public partial class search : Form
     {
@@ -39,7 +39,7 @@ namespace Culminating_Movie_Database
             string result = Database.Instance.SearchMovies(movieName);
 
             // If the movie is found, display its info, show the buttons, and update the label.
-            if (result.Contains("found"))
+            if (result.Contains("exists"))
             {
                 textBox1.Text = result;
                 showButtons(true);

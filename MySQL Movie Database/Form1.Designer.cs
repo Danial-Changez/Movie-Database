@@ -1,4 +1,4 @@
-﻿namespace Culminating_Movie_Database
+﻿namespace MySQL_Movie_Database
 {
     partial class Form1
     {
@@ -130,7 +130,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.title);
             this.Name = "Form1";
-            this.Text = "Culminating Movie Database";
+            this.Text = "MySQL Movie Database";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace Culminating_Movie_Database
+namespace MySQL_Movie_Database
 {
     public partial class add : Form
     {
