@@ -1,0 +1,29 @@
+name: .NET Framework Desktop Workflow
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    # Setup MSBuild
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
+
+    # Restore NuGet Packages
+    - name: Restore NuGet Packages
+      run: nuget restore "Movie Database.sln"
+
+    # Build Solution
+    - name: Build Solution
+      run: msbuild "Movie Database.sln" /p:Configuration=Release
